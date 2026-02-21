@@ -1,2 +1,0 @@
-# michaelmandic.com
-Personal Website
