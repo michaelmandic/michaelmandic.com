@@ -1,0 +1,43 @@
+---
+import { Menu, X } from "@lucide/astro";
+---
+
+<header class="w-full mb-12">
+    <div
+        class="max-w-4xl mx-auto px-5 py-5 flex justify-between items-center relative z-50"
+    >
+        <a href="/" aria-label="Homepage">MM</a>
+        <nav class="hidden md:flex">
+            <ul class="flex gap-6 place-self-center">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Links</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <button
+            @click="open = !open"
+            class="md:hidden hover:cursor-pointer p-3 -m-3"
+        >
+            <span x-show="!open"><Menu /></span>
+            <span x-show="open"><X /></span>
+        </button>
+    </div>
+
+    <div
+        x-show="open"
+        x-transition.opacity
+        class="md:hidden fixed inset-0 px-5 pt-24 bg-white dark:bg-neutral-900 z-40 flex flex-col"
+    >
+        <nav>
+            <ul class="flex flex-col w-full gap-3 text-2xl font-semibold">
+                <li><a href="#" @click="open=false" class="block">Blog</a></li>
+                <li><a href="#" @click="open=false" class="block">Links</a></li>
+                <li><a href="#" @click="open=false" class="block">About</a></li>
+                <li>
+                    <a href="#" @click="open=false" class="block">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

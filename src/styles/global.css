@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@view-transition {
+  navigation: auto;
+}
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Inter", Helvetica, "Segoe UI", Roboto, Arial, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scrollbar-gutter: stable both-egdes;
+  }
+
+  body {
+    @apply font-sans bg-white dark:bg-neutral-900;
+  }
+
+  main {
+    @apply max-w-4xl mx-auto px-5;
+  }
+
+  h1 {
+    @apply text-4xl font-semibold;
+  }
+}

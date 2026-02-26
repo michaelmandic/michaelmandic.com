@@ -1,0 +1,44 @@
+---
+import CommonHead from "../components/CommonHead.astro";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+
+const {
+	pageTitle,
+	mainHeading = pageTitle,
+	metaDescription = "Software engineer based in Belgrade, Serbia.",
+	htmlClass = "",
+	bodyClass = "",
+	...rest
+} = Astro.props;
+const titleId = mainHeading.replace(/\s+/g, "-").toLowerCase();
+---
+
+<!doctype html>
+<html
+	lang="en"
+	class={htmlClass}
+	{...rest}
+	transition:name="root"
+	transition:animate="fade"
+>
+	<head>
+		<CommonHead />
+		<title>
+			{pageTitle ? `${pageTitle} - Michael Mandic` : "Michael Mandic"}
+		</title>
+		<meta name="description" content={metaDescription} />
+	</head>
+	<body
+		x-data="{ open: false }"
+		x-init="$watch('open', value => { document.body.classList.toggle('overflow-hidden', value) })"
+		class=`${bodyClass}`
+	>
+		<NavBar />
+		<main>
+			<h1>{mainHeading}</h1>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
