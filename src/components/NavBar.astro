@@ -4,15 +4,15 @@ import { Menu, X } from "@lucide/astro";
 
 <header class="w-full mb-12">
     <div
-        class="max-w-4xl mx-auto px-5 py-5 flex justify-between items-center relative z-50"
+        class="max-w-4xl mx-auto px-5 py-5 flex justify-between items-center relative z-50 font-medium"
     >
         <a href="/" aria-label="Homepage">MM</a>
         <nav class="hidden md:flex">
             <ul class="flex gap-6 place-self-center">
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Links</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/links">Links</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
         <button
@@ -31,13 +31,27 @@ import { Menu, X } from "@lucide/astro";
     >
         <nav>
             <ul class="flex flex-col w-full gap-3 text-2xl font-semibold">
-                <li><a href="#" @click="open=false" class="block">Blog</a></li>
-                <li><a href="#" @click="open=false" class="block">Links</a></li>
-                <li><a href="#" @click="open=false" class="block">About</a></li>
                 <li>
-                    <a href="#" @click="open=false" class="block">Contact</a>
+                    <a href="/blog" @click="open=false" class="block">Blog</a>
+                </li>
+                <li>
+                    <a href="/links" @click="open=false" class="block">Links</a>
+                </li>
+                <li>
+                    <a href="/about" @click="open=false" class="block">About</a>
+                </li>
+                <li>
+                    <a href="/contact" @click="open=false" class="block"
+                        >Contact</a
+                    >
                 </li>
             </ul>
         </nav>
     </div>
 </header>
+
+<style>
+    a {
+        @apply no-underline;
+    }
+</style>

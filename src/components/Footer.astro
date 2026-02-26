@@ -1,9 +1,55 @@
 <footer
-    class="w-full mt-12 border-t-2 border-neutral-200 dark:border-neutral-800"
+    class="w-full mt-24 mb-12 border-t-2 border-neutral-200 dark:border-neutral-800"
 >
-    <div class="max-w-4xl mx-auto px-5 py-5">
-        <small class="text-neutral-500 dark:text-neutral-400"
-            >Copyright © 2026 Michael Mandic. All rights reserved.</small
+    <div class="max-w-4xl mx-auto px-5 md:text-sm">
+        <div
+            class="md:grid md:grid-cols-3 gap-4 my-6 flex flex-col w-full link-table"
         >
+            <div>
+                <h6>Navigation</h6>
+                <ul
+                    class="text-neutral-500 dark:text-neutral-400 my-2 flex flex-col gap-1"
+                >
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/links">Links</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6>Socials</h6>
+                <ul
+                    class="text-neutral-500 dark:text-neutral-400 my-2 flex flex-col gap-1"
+                >
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">GitHub</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6>Other Links</h6>
+                <ul
+                    class="text-neutral-500 dark:text-neutral-400 my-2 flex flex-col gap-1"
+                >
+                    <li><a href="#">Source Code</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="text-neutral-500 dark:text-neutral-400 leading-5 text-xs">
+            Copyright © 2026 Michael Mandic.<br />Code licensed under <a
+                href="https://opensource.org/license/MIT"
+                target="_blank"
+                class="underline">MIT</a
+            >. Content and assets licensed under <a
+                href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+                target="_blank"
+                class="underline">CC BY-NC-ND 4.0</a
+            >.
+        </p>
     </div>
 </footer>
+<style>
+    .link-table a {
+        @apply no-underline;
+    }
+</style>
