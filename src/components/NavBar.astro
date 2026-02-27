@@ -4,7 +4,7 @@ import { Menu, X } from "@lucide/astro";
 
 <header class="w-full mb-12">
     <div
-        class="max-w-4xl mx-auto px-5 py-5 flex justify-between items-center relative z-50 font-medium"
+        class="max-w-4xl mx-auto px-6 py-6 flex justify-between items-center relative z-50 font-medium"
     >
         <a href="/" aria-label="Homepage">MM</a>
         <nav class="hidden md:flex">
@@ -27,10 +27,10 @@ import { Menu, X } from "@lucide/astro";
     <div
         x-show="open"
         x-transition.opacity
-        class="md:hidden fixed inset-0 px-5 pt-24 bg-white dark:bg-neutral-900 z-40 flex flex-col"
+        class="md:hidden fixed inset-0 px-6 pt-36 bg-white dark:bg-neutral-900 z-40 flex flex-col"
     >
         <nav>
-            <ul class="flex flex-col w-full gap-3 text-2xl font-semibold">
+            <ul class="flex flex-col w-full gap-6 text-3xl font-semibold">
                 <li>
                     <a href="/blog" @click="open=false" class="block">Blog</a>
                 </li>
