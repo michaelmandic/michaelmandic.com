@@ -13,5 +13,11 @@
   "observability": {
     "enabled": true
   },
-  "$schema": "node_modules/wrangler/config-schema.json"
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "routes": [
+    {
+      "pattern": "michaelmandic.com",
+      "custom_domain": true
+    }
+  ]
 }
