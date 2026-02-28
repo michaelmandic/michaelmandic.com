@@ -2,7 +2,7 @@
 import { Menu, X } from "@lucide/astro";
 ---
 
-<header class="w-full mb-12">
+<header id="top" class="w-full mb-12 mt-2">
     <div
         class="max-w-4xl mx-auto px-6 py-6 flex justify-between items-center relative z-50 font-medium"
     >
@@ -17,7 +17,7 @@ import { Menu, X } from "@lucide/astro";
         </nav>
         <button
             @click="open = !open"
-            class="sm:hidden hover:cursor-pointer p-3 -m-3"
+            class="sm:hidden hover:cursor-pointer p-3 -m-3 hover-highlight darker"
         >
             <span x-show="!open"><Menu /></span>
             <span x-show="open"><X /></span>
