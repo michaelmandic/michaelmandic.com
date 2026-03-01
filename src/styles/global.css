@@ -5,19 +5,6 @@
   --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, Helvetica, Inter, "Segoe UI", Roboto, Arial, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: "IBM Plex Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: "IBM Plex Mono" ,SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  
-
-  --color-stone-50: hsl(60, 9%, 98%);
-  --color-stone-100: hsl(60, 7%, 96%);
-  --color-stone-200: hsl(20, 11%, 90%);
-  --color-stone-300: hsl(20, 15%, 83%);
-  --color-stone-400: hsl(27, 11%, 63%);
-  --color-stone-500: hsl(26, 8%, 45%);
-  --color-stone-600: hsl(36, 6%, 32%);
-  --color-stone-700: hsl(33, 7%, 25%);
-  --color-stone-800: hsl(12, 6%, 15%);
-  --color-stone-900: hsl(24, 10%, 10%);
-  --color-stone-950: hsl(20, 14%, 4%);
 }
 
 @layer base {
@@ -26,7 +13,7 @@
   }
 
   body {
-    @apply font-sans bg-stone-300 dark:bg-stone-800 text-stone-700 dark:text-stone-300;
+    @apply font-sans bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300;
   }
 
   main {
@@ -34,7 +21,7 @@
   }
 
   h1 {
-    @apply text-5xl sm:text-6xl  mb-4 mt-12  font-normal  font-serif italic;
+    @apply text-5xl sm:text-6xl  mb-4 mt-2  font-normal  font-serif italic;
   }
   h2 {
     @apply text-2xl sm:text-3xl font-medium mb-1 mt-6 ;
