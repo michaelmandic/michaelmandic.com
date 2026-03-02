@@ -7,6 +7,10 @@
   navigation: auto;
 }
 
+html {
+    scrollbar-gutter: stable both-egdes;
+}
+
 @theme {
   --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, Helvetica, Inter, "Segoe UI", Roboto, Arial, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: "IBM Plex Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
@@ -14,10 +18,6 @@
 }
 
 @layer base {
-  html {
-    scrollbar-gutter: stable both-egdes;
-  }
-
   body {
     @apply font-sans bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300;
   }

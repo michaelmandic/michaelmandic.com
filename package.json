@@ -1,18 +1,17 @@
 {
-  "name": "",
+  "name": "michaelmandic-site",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "npm run build && wrangler dev",
+    "preview": "astro preview",
     "astro": "astro",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.9",
-    "@astrojs/cloudflare": "^12.6.12",
     "@lucide/astro": "^0.575.0",
     "@tailwindcss/vite": "^4.2.0",
     "@types/alpinejs": "^3.13.11",
