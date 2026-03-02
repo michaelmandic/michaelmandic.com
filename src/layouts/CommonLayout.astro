@@ -15,7 +15,13 @@ const titleId = mainHeading.replace(/\s+/g, "-").toLowerCase();
 ---
 
 <!doctype html>
-<html lang="en" class={htmlClass} {...rest}>
+<html
+	lang="en"
+	class={htmlClass}
+	{...rest}
+	transition:name="root"
+	transition:animate="fade"
+>
 	<head>
 		<CommonHead />
 		<title>

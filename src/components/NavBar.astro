@@ -20,12 +20,13 @@ import { Menu, X } from "@lucide/astro";
             class="sm:hidden hover:cursor-pointer p-3 -m-3 hover-highlight darker"
         >
             <span x-show="!open"><Menu /></span>
-            <span x-show="open"><X /></span>
+            <span x-show="open" x-cloak><X /></span>
         </button>
     </div>
 
     <div
         x-show="open"
+        x-cloak
         x-transition.opacity
         class="sm:hidden fixed inset-0 px-6 pt-36 bg-stone-300 dark:bg-stone-800 z-40 flex flex-col"
     >
