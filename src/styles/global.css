@@ -51,10 +51,6 @@ html {
   scrollbar-gutter: stable both-edges !important;
   scrollbar-width: thin;
   scroll-behavior: smooth;
-
-  @variant dark {
-    scrollbar-color: var(--color-text-dark) var(--color-background-dark);
-  }
 }
 
 ::selection {
