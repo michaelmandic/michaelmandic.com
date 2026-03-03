@@ -2,7 +2,7 @@
 import { Menu, X } from "@lucide/astro";
 ---
 
-<header id="top" class="w-full mb-12 mt-2">
+<header id="top" class="w-full mb-12 mt-2 no-underline-links">
     <div
         class="max-w-4xl mx-auto px-6 py-6 flex justify-between items-center relative z-50 font-medium"
     >
@@ -28,7 +28,7 @@ import { Menu, X } from "@lucide/astro";
         x-show="open"
         x-cloak
         x-transition.opacity
-        class="sm:hidden fixed inset-0 px-6 pt-36 bg-stone-300 dark:bg-stone-800 z-40 flex flex-col"
+        class="sm:hidden fixed inset-0 px-6 pt-36 bg-background-dark dark:bg-background-dark z-40 flex flex-col"
     >
         <nav>
             <ul class="flex flex-col w-full gap-6 text-4xl font-medium">
@@ -50,9 +50,3 @@ import { Menu, X } from "@lucide/astro";
         </nav>
     </div>
 </header>
-
-<style>
-    a {
-        @apply no-underline;
-    }
-</style>

@@ -3,50 +3,113 @@
 
 [x-cloak] { display: none !important; }
 
-html {
-  scrollbar-gutter: stable both-edges !important;
-  scroll-behavior: smooth;
-}
-
 @theme {
   --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, Helvetica, Inter, "Segoe UI", Roboto, Arial, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: "IBM Plex Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: "IBM Plex Mono" ,SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-background: var(--color-stone-200);
+  --color-background-dark: var(--color-stone-800);
+  --color-text: var(--color-stone-800);
+  --color-text-dark: var(--color-stone-200);
+  --color-accent: var(--color-green-700);
+  --color-accent-dark: var(--color-green-400);
 }
 
+:root {
+  accent-color: var(--color-accent);
+
+  @variant dark {
+    accent-color: var(--color-accent-dark);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  nav, footer {
+    display: none !important;
+  }
+  html, body {
+    color: black;
+    background-color: white;
+  }
+  a::after {
+    content: " (" attr(href) ")";
+  }
+  header a::after {
+    content: "" !important;
+  }
+}
+
+html {
+  scrollbar-gutter: stable both-edges !important;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text) var(--color-background);
+  scroll-behavior: smooth;
+
+  @variant dark {
+    scrollbar-color: var(--color-text-dark) var(--color-background-dark);
+  }
+}
+
+::selection {
+    @apply bg-accent text-white;
+  }
+
 @layer base {
-  body {
-    @apply font-sans bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300;
+  html, body {
+    @apply font-sans bg-background dark:bg-background-dark text-text dark:text-text-dark;
   }
 
   main {
     @apply max-w-4xl mx-auto px-6;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-balance ;
+  }
+  h2, h3, h4, h5, h6 {
+    @apply font-medium;
+  }
   h1 {
     @apply text-5xl sm:text-6xl  mb-4 mt-2  font-normal  font-serif italic;
   }
   h2 {
-    @apply text-2xl sm:text-3xl font-medium mb-1 mt-6 ;
+    @apply text-2xl sm:text-3xl mb-1 mt-6 ;
   }
   h3 {
-    @apply text-xl sm:text-2xl font-medium mb-1 mt-4 ;
+    @apply text-xl sm:text-2xl mb-1 mt-4 ;
   }
   h4 {
-    @apply text-lg sm:text-xl font-medium mb-1 mt-2 ;
+    @apply text-lg sm:text-xl mb-1 mt-2 ;
   }
   h5 {
-    @apply text-base sm:text-lg font-medium mb-1 mt-1 ;
+    @apply text-base sm:text-lg mb-1 mt-1 ;
   }
   h6 {
-    @apply text-sm  sm:text-base font-medium mb-1 mt-1;
+    @apply text-sm  sm:text-base mb-1 mt-1;
   }
 
   p {
-    @apply text-lg mb-2;
+    @apply text-lg mb-2 text-pretty;
   }
   small {
-    @apply text-stone-600 dark:text-stone-400 leading-5 text-sm;
+    @apply text-stone-600 dark:text-stone-400 leading-5 text-sm text-pretty;
+  }
+  a {
+    @apply underline inline-block underline-offset-3 hover:p-1 hover:-m-1 transition-transform hover:-translate-y-1 hover:text-accent hover:dark:text-accent-dark active:opacity-50 active:translate-y-0;
+  }
+}
+
+@layer components {
+  .hover-highlight {
+      @apply  hover:text-accent hover:dark:text-accent-dark active:opacity-50 ;
   }
   .small {
     @apply text-stone-600 dark:text-stone-400 leading-5 text-sm;
@@ -54,15 +117,7 @@ html {
   .darker {
     @apply text-stone-600 dark:text-stone-400;
   }
-
-  a {
-    @apply underline inline-block underline-offset-3 hover:p-1 hover:-m-1 transition-transform hover:-translate-y-1 hover:text-green-800 hover:dark:text-green-300 active:opacity-50 active:translate-y-0;
-  }
-  .hover-highlight {
-    @apply  hover:text-green-800 hover:dark:text-green-300 active:opacity-50 ;
-  }
-
-  ::selection {
-    @apply bg-green-800 text-white;
+  .no-underline-links a {
+    @apply no-underline;
   }
 }
