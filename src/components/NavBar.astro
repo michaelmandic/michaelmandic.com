@@ -6,18 +6,18 @@ import { Menu, X } from "@lucide/astro";
     <div
         class="max-w-4xl mx-auto px-6 py-6 flex justify-between items-center relative z-50 font-medium"
     >
-        <a href="/" aria-label="Homepage">Michael Mandic</a>
+        <a href="/" aria-label="Homepage" class="button-link">Michael Mandic</a>
         <nav class="hidden sm:flex">
             <ul class="flex gap-6 place-self-center">
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/links">Links</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/blog" class="button-link">Blog</a></li>
+                <li><a href="/links" class="button-link">Links</a></li>
+                <li><a href="/about" class="button-link">About</a></li>
+                <li><a href="/contact" class="button-link">Contact</a></li>
             </ul>
         </nav>
         <button
             @click="open = !open"
-            class="sm:hidden hover:cursor-pointer p-3 -m-3 hover-highlight darker"
+            class="sm:hidden hover:cursor-pointer hover-highlight darker button-link"
         >
             <span x-show="!open"><Menu /></span>
             <span x-show="open" x-cloak><X /></span>

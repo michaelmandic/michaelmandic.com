@@ -13,7 +13,7 @@
   --color-text: var(--color-stone-800);
   --color-text-dark: var(--color-stone-200);
   --color-accent: var(--color-green-700);
-  --color-accent-dark: var(--color-green-400);
+  --color-accent-dark: var(--color-green-300);
 }
 
 :root {
@@ -97,9 +97,28 @@ html {
   small {
     @apply text-stone-600 dark:text-stone-400 leading-5 text-sm text-pretty;
   }
-  a {
-    @apply underline inline-block underline-offset-3 hover:p-1 hover:-m-1 transition-transform hover:-translate-y-1 hover:text-accent hover:dark:text-accent-dark active:opacity-50 active:translate-y-0;
+  a, button {
+    @apply relative inline-block hover:p-1 hover:-m-1 transition-transform hover:-translate-y-1 hover:text-accent hover:dark:text-accent-dark active:opacity-50 active:translate-y-0;
   }
+  a {
+    @apply relative underline underline-offset-3;
+  }
+  .button-link {
+    @apply relative;
+  }
+  .button-link::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 16px;
+    corner-shape: squircle;
+    background: transparent;
+    z-index: -1;
+  }
+  .button-link:hover::after {
+    @apply bg-stone-300 dark:bg-stone-700;
+  }
+
 }
 
 @layer components {
