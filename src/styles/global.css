@@ -50,7 +50,6 @@
 html {
   scrollbar-gutter: stable both-edges !important;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-text) var(--color-background);
   scroll-behavior: smooth;
 
   @variant dark {
