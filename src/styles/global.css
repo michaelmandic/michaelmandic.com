@@ -4,7 +4,8 @@
 [x-cloak] { display: none !important; }
 
 html {
-    scrollbar-gutter: stable both-egdes;
+  scrollbar-gutter: stable both-edges !important;
+  scroll-behavior: smooth;
 }
 
 @theme {
