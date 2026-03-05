@@ -1,19 +1,57 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 [x-cloak] { display: none !important; }
 
-@theme {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, "Helvetica Neue", Roboto, Arial, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-serif: "New York", ui-serif, "Iowan Old Style", "Apple Garamond", Baskerville, Georgia, Cambria, "Times New Roman", "Noto Serif", "Droid Serif", Times, "Source Serif Pro", serif, system-ui, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, Liberation Mono, monospace, system-ui;
+@font-face {
+  font-family: 'InterVariable';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/fonts/InterVariable-Italic.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'InterVariable';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/fonts/InterVariable.woff2) format('woff2');
+}
 
-  --color-background: var(--color-stone-200);
-  --color-background-dark: var(--color-stone-800);
-  --color-text: var(--color-stone-800);
-  --color-text-dark: var(--color-stone-200);
-  --color-accent: var(--color-green-700);
-  --color-accent-dark: var(--color-green-300);
+:root {
+  --faint: rgb(0 0 0 / 0.6);
+  --fainter: rgb(0 0 0 / 0.25);
+  --whiteblack: white;
+  --blackwhite: black;
+
+  @variant dark {
+    --faint: rgb(255 255 255 / 0.6);
+    --fainter: rgb(255 255 255 / 0.25);
+    --whiteblack: black;
+    --blackwhite: white;
+  }
+}
+
+@theme {
+  --font-sans: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, 'Helvetica Neue', Roboto, Arial, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-serif: 'New York', ui-serif, 'Iowan Old Style', 'Apple Garamond', Baskerville, Georgia, Cambria, 'Times New Roman', 'Noto Serif', 'Droid Serif', Times, 'Source Serif Pro', serif, system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, Liberation Mono, monospace, system-ui;
+
+  --color-faint: var(--faint);
+  --color-fainter: var(--fainter);
+  --color-whiteblack: var(--whiteblack);
+  --color-blackwhite: var(--blackwhite);
+
+  --color-background: oklch(84.943% 0.21991 140.865);
+  --color-background-dark: var(--color-neutral-900);
+
+  --color-text: black;
+  --color-text-dark: var(--color-neutral-50);
+
+  --color-green: oklch(84.943% 0.21991 140.865);
+
+  --color-accent: var(--color-emerald-700);
+  --color-accent-dark: var(--color-emerald-200);
 }
 
 :root {
@@ -40,98 +78,82 @@
     background-color: white;
   }
   a::after {
-    content: " (" attr(href) ")";
+    content: ' (' attr(href) ')';
   }
   header a::after {
-    content: "" !important;
+    content: '' !important;
   }
 }
 
 html {
-  scrollbar-gutter: stable both-edges !important;
+  scrollbar-gutter: stable !important;
   scrollbar-width: thin;
   scroll-behavior: smooth;
 }
-
-::selection {
-    @apply bg-accent text-white;
-  }
 
 @layer base {
   html, body {
     @apply font-sans bg-background dark:bg-background-dark text-text dark:text-text-dark;
   }
+  body {
+    @apply text-lg flex flex-col items-center;
+  }
 
   main {
-    @apply max-w-4xl mx-auto px-6;
+    @apply max-w-xl mx-6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply text-balance ;
   }
   h2, h3, h4, h5, h6 {
-    @apply font-medium;
+    @apply font-semibold;
   }
   h1 {
-    @apply text-5xl sm:text-6xl  mb-4 mt-2  font-normal  font-serif italic;
+    @apply text-4xl sm:text-5xl tracking-tight my-6 font-semibold;
   }
   h2 {
-    @apply text-2xl sm:text-3xl mb-1 mt-6 ;
+    @apply text-2xl sm:text-3xl my-5 ;
   }
   h3 {
-    @apply text-xl sm:text-2xl mb-1 mt-4 ;
+    @apply text-xl sm:text-2xl my-4 ;
   }
   h4 {
-    @apply text-lg sm:text-xl mb-1 mt-2 ;
+    @apply text-lg sm:text-xl my-4 ;
   }
   h5 {
-    @apply text-base sm:text-lg mb-1 mt-1 ;
+    @apply text-base sm:text-lg my-4 ;
   }
   h6 {
-    @apply text-sm  sm:text-base mb-1 mt-1;
+    @apply text-sm  sm:text-base my-4 ;
   }
 
   p {
-    @apply text-lg mb-2 text-pretty;
+    @apply my-2 text-pretty;
   }
   small {
-    @apply text-stone-600 dark:text-stone-400 leading-5 text-sm text-pretty;
-  }
-  a, button {
-    @apply relative inline-block hover:p-1 hover:-m-1 transition-transform hover:-translate-y-1 hover:text-accent hover:dark:text-accent-dark active:opacity-50 active:translate-y-0;
+    @apply text-faint leading-5 text-sm text-pretty;
   }
   a {
-    @apply relative underline underline-offset-3;
+    @apply underline decoration-fainter decoration-1 underline-offset-4 hover:text-blackwhite hover:decoration-blackwhite active:opacity-50;
   }
-  .button-link {
-    @apply relative;
+  .hidden-underline a, a.hidden-underline {
+    @apply no-underline hover:underline;
   }
-  .button-link::after {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 16px;
-    corner-shape: squircle;
-    background: transparent;
-    z-index: -1;
+
+  hr {
+    @apply max-w-xl my-4 border-fainter;
   }
-  .button-link:hover::after {
-    @apply bg-stone-300 dark:bg-stone-700;
-  }
+
 
 }
 
-@layer components {
+@layer utilities {
   .hover-highlight {
-      @apply  hover:text-accent hover:dark:text-accent-dark active:opacity-50 ;
+      @apply  hover:text-blackwhite active:opacity-50 ;
   }
   .small {
-    @apply text-stone-600 dark:text-stone-400 leading-5 text-sm;
-  }
-  .darker {
-    @apply text-stone-600 dark:text-stone-400;
-  }
-  .no-underline-links a {
-    @apply no-underline;
+    @apply text-faint leading-5 text-sm;
   }
 }
+

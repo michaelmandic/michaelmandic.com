@@ -17,10 +17,7 @@ const posts = (await getCollection("blog")).sort(
             {
                 posts.map((post) => (
                     <li>
-                        <a
-                            href={`/blog/${post.id}/`}
-                            class="no-underline hover-highlight"
-                        >
+                        <a href={`/blog/${post.id}/`} class="">
                             {post.data.heroImage && (
                                 <Image
                                     width={720}
@@ -29,11 +26,11 @@ const posts = (await getCollection("blog")).sort(
                                     alt=""
                                 />
                             )}
-                            <h2 class="">{post.data.title}</h2>
-                            <p class="small">
-                                <FormattedDate date={post.data.pubDate} />
-                            </p>
+                            <div class="">{post.data.title}</div>
                         </a>
+                        <div class="small">
+                            <FormattedDate date={post.data.pubDate} />
+                        </div>
                     </li>
                 ))
             }

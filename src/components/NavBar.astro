@@ -2,50 +2,15 @@
 import { Menu, X } from "@lucide/astro";
 ---
 
-<header id="top" class="w-full mb-12 mt-2 no-underline-links">
-    <div
-        class="max-w-4xl mx-auto px-6 py-6 flex justify-between items-center relative z-50 font-medium"
-    >
-        <a href="/" aria-label="Homepage" class="button-link">Michael Mandic</a>
-        <nav class="hidden sm:flex">
-            <ul class="flex gap-6 place-self-center">
-                <li><a href="/blog" class="button-link">Blog</a></li>
-                <li><a href="/links" class="button-link">Links</a></li>
-                <li><a href="/about" class="button-link">About</a></li>
-                <li><a href="/contact" class="button-link">Contact</a></li>
-            </ul>
-        </nav>
-        <button
-            @click="open = !open"
-            class="sm:hidden hover:cursor-pointer hover-highlight darker button-link"
-        >
-            <span x-show="!open"><Menu /></span>
-            <span x-show="open" x-cloak><X /></span>
-        </button>
-    </div>
-
-    <div
-        x-show="open"
-        x-cloak
-        x-transition.opacity
-        class="sm:hidden fixed inset-0 px-6 pt-36 bg-background-dark dark:bg-background-dark z-40 flex flex-col"
-    >
+<header id="top" class="max-w-xl mb-16 pt-12 text-faint hidden-underline">
+    <div class="max-w-xl gap-2 px-6 relative z-50 flex flex-col sm:flex-row">
         <nav>
-            <ul class="flex flex-col w-full gap-6 text-4xl font-medium">
-                <li>
-                    <a href="/blog" @click="open=false" class="block">Blog</a>
-                </li>
-                <li>
-                    <a href="/links" @click="open=false" class="block">Links</a>
-                </li>
-                <li>
-                    <a href="/about" @click="open=false" class="block">About</a>
-                </li>
-                <li>
-                    <a href="/contact" @click="open=false" class="block"
-                        >Contact</a
-                    >
-                </li>
+            <ul class="flex gap-x-3 gap-y-0 flex-wrap">
+                <li><a href="/" class="hidden-underline">Home</a></li>
+                <li><a href="/blog" class="hidden-underline">Blog</a></li>
+                <li><a href="/links" class="hidden-underline">Links</a></li>
+                <li><a href="/about" class="hidden-underline">About</a></li>
+                <li><a href="/contact" class="hidden-underline">Contact</a></li>
             </ul>
         </nav>
     </div>

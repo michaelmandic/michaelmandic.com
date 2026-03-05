@@ -28,50 +28,46 @@ const titleId = title.replace(/\s+/g, "-").toLowerCase();
 		</title>
 		<meta name="description" content={description} />
 	</head>
-	<body
-		x-data="{ open: false }"
-		x-init="$watch('open', value => { document.body.classList.toggle('overflow-hidden', value) })"
-	>
-		<NavBar />
-
-		<main>
-			<a
-				href="/blog"
-				class="small italic no-underline mb-2 hover:mb-1 hover-highlight button-link"
-				>← all posts</a
-			>
-			<article>
-				<div>
-					{
-						heroImage && (
-							<Image
-								width={1020}
-								height={510}
-								src={heroImage}
-								alt=""
-							/>
-						)
-					}
-				</div>
-				<div>
+	<body>
+		<div class="max-w-xl w-full">
+			<NavBar />
+			<main>
+				<a href="/blog" class="italic mb-2 text-faint hidden-underline"
+					>← all posts</a
+				>
+				<article>
 					<div>
 						{
-							updatedDate && (
-								<div class="last-updated-on">
-									Last updated on{" "}
-									<FormattedDate date={updatedDate} />
-								</div>
+							heroImage && (
+								<Image
+									width={1020}
+									height={510}
+									src={heroImage}
+									alt=""
+								/>
 							)
 						}
-						<h1>{title}</h1>
-						<p class="small mb-8">
-							<FormattedDate date={pubDate} />
-						</p>
 					</div>
-					<slot />
-				</div>
-			</article>
-		</main>
-		<Footer />
+					<div>
+						<div>
+							{
+								updatedDate && (
+									<div class="last-updated-on">
+										Last updated on{" "}
+										<FormattedDate date={updatedDate} />
+									</div>
+								)
+							}
+							<h1>{title}</h1>
+							<div class="text-faint my-6">
+								<FormattedDate date={pubDate} />
+							</div>
+						</div>
+						<slot />
+					</div>
+				</article>
+			</main>
+			<Footer />
+		</div>
 	</body>
 </html>

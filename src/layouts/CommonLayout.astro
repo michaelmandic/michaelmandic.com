@@ -23,16 +23,14 @@ const titleId = mainHeading.replace(/\s+/g, "-").toLowerCase();
 		</title>
 		<meta name="description" content={metaDescription} />
 	</head>
-	<body
-		x-data="{ open: false }"
-		x-init="$watch('open', value => { document.body.classList.toggle('overflow-hidden', value) })"
-		class=`${bodyClass}`
-	>
-		<NavBar />
-		<main>
-			<h1>{mainHeading}</h1>
-			<slot />
-		</main>
-		<Footer />
+	<body class=`${bodyClass}`>
+		<div class="max-w-xl w-full">
+			<NavBar />
+			<main>
+				<h1>{mainHeading}</h1>
+				<slot />
+			</main>
+			<Footer />
+		</div>
 	</body>
 </html>
