@@ -29,12 +29,9 @@ const titleId = title.replace(/\s+/g, "-").toLowerCase();
 		<meta name="description" content={description} />
 	</head>
 	<body>
-		<div class="max-w-xl w-full">
+		<div class="max-w-2xl w-full">
 			<NavBar />
 			<main>
-				<a href="/blog" class="italic mb-2 text-faint hidden-underline"
-					>← all posts</a
-				>
 				<article>
 					<div>
 						{
@@ -48,20 +45,25 @@ const titleId = title.replace(/\s+/g, "-").toLowerCase();
 							)
 						}
 					</div>
+					<div class="mb-2 text-faint">
+						<a href="/blog" class="italic hidden-underline"
+							>← all posts</a
+						>
+					</div>
 					<div>
 						<div>
+							<h1>{title}</h1>
+							<div class="text-faint my-6">
+								<FormattedDate date={pubDate} />
+							</div>
 							{
 								updatedDate && (
-									<div class="last-updated-on">
+									<div class="text-faint my-6">
 										Last updated on{" "}
 										<FormattedDate date={updatedDate} />
 									</div>
 								)
 							}
-							<h1>{title}</h1>
-							<div class="text-faint my-6">
-								<FormattedDate date={pubDate} />
-							</div>
 						</div>
 						<slot />
 					</div>

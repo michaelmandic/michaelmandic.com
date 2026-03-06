@@ -33,7 +33,7 @@
 }
 
 @theme {
-  --font-sans: 'InterVariable', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, 'Helvetica Neue', Roboto, Arial, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-sans: -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, 'Segoe UI', 'Noto Sans', Helvetica, 'Helvetica Neue', Roboto, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --font-serif: 'New York', ui-serif, 'Iowan Old Style', 'Apple Garamond', Baskerville, Georgia, Cambria, 'Times New Roman', 'Noto Serif', 'Droid Serif', Times, 'Source Serif Pro', serif, system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, Liberation Mono, monospace, system-ui;
 
@@ -42,8 +42,8 @@
   --color-whiteblack: var(--whiteblack);
   --color-blackwhite: var(--blackwhite);
 
-  --color-background: oklch(84.943% 0.21991 140.865);
-  --color-background-dark: var(--color-neutral-900);
+  --color-background: oklch(90.043% 0.2094 140.767);
+  --color-background-dark: oklch(20.019% 0.00002 271.152);
 
   --color-text: black;
   --color-text-dark: var(--color-neutral-50);
@@ -100,7 +100,7 @@ html {
   }
 
   main {
-    @apply max-w-xl mx-6;
+    @apply mx-6;
   }
 
   h1, h2, h3, h4, h5, h6 {
