@@ -42,11 +42,11 @@
   --color-whiteblack: var(--whiteblack);
   --color-blackwhite: var(--blackwhite);
 
-  --color-background: var(--color-neutral-100);
+  --color-background: var(--color-taupe-200);
   --color-background-dark: var(--color-neutral-800);
 
   --color-text: var(--color-neutral-700);
-  --color-text-dark: var(--color-neutral-200);
+  --color-text-dark: var(--color-taupe-300);
 
   --color-green: oklch(84.943% 0.21991 140.865);
 
