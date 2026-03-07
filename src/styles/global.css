@@ -42,11 +42,11 @@
   --color-whiteblack: var(--whiteblack);
   --color-blackwhite: var(--blackwhite);
 
-  --color-background: oklch(90.043% 0.2094 140.767);
-  --color-background-dark: oklch(20.019% 0.00002 271.152);
+  --color-background: var(--color-neutral-100);
+  --color-background-dark: var(--color-neutral-800);
 
-  --color-text: var(--color-neutral-800);
-  --color-text-dark: var(--color-neutral-100);
+  --color-text: var(--color-neutral-700);
+  --color-text-dark: var(--color-neutral-200);
 
   --color-green: oklch(84.943% 0.21991 140.865);
 
@@ -93,14 +93,14 @@ html {
 
 @layer base {
   html, body {
-    @apply font-sans bg-green-300 dark:bg-emerald-900 text-text dark:text-text-dark;
+    @apply font-sans bg-background dark:bg-background-dark text-text dark:text-text-dark;
   }
   body {
     @apply text-lg flex flex-col items-center;
   }
 
   main {
-    @apply mx-2 px-4 pt-8 pb-4 rounded-3xl bg-white dark:inset-ring-white/10 dark:bg-neutral-800;
+    @apply mx-6;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -110,7 +110,7 @@ html {
     @apply font-semibold;
   }
   h1 {
-    @apply text-4xl sm:text-5xl tracking-tight mb-6 font-semibold;
+    @apply text-4xl sm:text-5xl tracking-tight my-6 font-semibold;
   }
   h2 {
     @apply text-2xl sm:text-3xl my-5 ;
@@ -142,7 +142,7 @@ html {
   }
 
   hr {
-    @apply  my-4 border-fainter;
+    @apply my-4 border-fainter;
   }
 
 
