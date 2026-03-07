@@ -45,20 +45,20 @@ const titleId = title.replace(/\s+/g, "-").toLowerCase();
 							)
 						}
 					</div>
-					<div class="mb-2 text-faint">
+					<div class="mb-4 text-faint">
 						<a href="/blog" class="italic hidden-underline"
 							>← all posts</a
 						>
 					</div>
 					<div>
-						<div>
-							<h1>{title}</h1>
-							<div class="text-faint my-6">
+						<div class="mb-8">
+							<h1 class="my-0">{title}</h1>
+							<div class="text-faint my-4">
 								<FormattedDate date={pubDate} />
 							</div>
 							{
 								updatedDate && (
-									<div class="text-faint my-6">
+									<div class="text-faint my-4">
 										Last updated on{" "}
 										<FormattedDate date={updatedDate} />
 									</div>
