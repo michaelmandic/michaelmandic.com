@@ -19,14 +19,14 @@
 }
 
 :root {
-  --faint: rgb(0 0 0 / 0.6);
-  --fainter: rgb(0 0 0 / 0.25);
+  --faint: var(--color-neutral-500);
+  --fainter: var(--color-neutral-300);
   --whiteblack: white;
   --blackwhite: black;
 
   @variant dark {
-    --faint: rgb(255 255 255 / 0.6);
-    --fainter: rgb(255 255 255 / 0.25);
+    --faint: var(--color-neutral-400);
+    --fainter: var(--color-neutral-600);
     --whiteblack: black;
     --blackwhite: white;
   }
@@ -42,11 +42,11 @@
   --color-whiteblack: var(--whiteblack);
   --color-blackwhite: var(--blackwhite);
 
-  --color-background: var(--color-taupe-200);
+  --color-background: var(--color-neutral-200);
   --color-background-dark: var(--color-neutral-800);
 
   --color-text: var(--color-neutral-700);
-  --color-text-dark: var(--color-taupe-300);
+  --color-text-dark: var(--color-neutral-200);
 
   --color-green: oklch(84.943% 0.21991 140.865);
 
@@ -145,7 +145,16 @@ html {
     @apply my-4 border-fainter;
   }
 
+  button {
+    @apply cursor-pointer active:opacity-50;
+  }
 
+}
+
+@layer components {
+  .icon-button {
+    @apply text-faint hover:text-blackwhite active:opacity-50 inline;
+  }
 }
 
 @layer utilities {

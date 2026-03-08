@@ -22,6 +22,9 @@ const titleId = mainHeading.replace(/\s+/g, "-").toLowerCase();
 			{pageTitle ? `${pageTitle} - Michael Mandic` : "Michael Mandic"}
 		</title>
 		<meta name="description" content={metaDescription} />
+		<!-- open graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://michaelmandic.com" />
 	</head>
 	<body class=`${bodyClass}`>
 		<div class="max-w-2xl w-full">

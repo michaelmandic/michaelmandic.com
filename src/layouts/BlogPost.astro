@@ -3,6 +3,7 @@ import CommonHead from "../components/CommonHead.astro";
 import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import ShareLinks from "../components/ShareLinks.astro";
 
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
@@ -17,6 +18,8 @@ const {
 	heroImage,
 } = Astro.props;
 const titleId = title.replace(/\s+/g, "-").toLowerCase();
+
+const url = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!doctype html>
@@ -27,6 +30,11 @@ const titleId = title.replace(/\s+/g, "-").toLowerCase();
 			{`${title} - Michael Mandic Blog`}
 		</title>
 		<meta name="description" content={description} />
+		<!-- open graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={url} />
+		<meta property="og:type" content="article" />
 	</head>
 	<body>
 		<div class="max-w-2xl w-full">
@@ -64,6 +72,7 @@ const titleId = title.replace(/\s+/g, "-").toLowerCase();
 									</div>
 								)
 							}
+							<ShareLinks title={Astro.props.title} url={url} />
 						</div>
 						<slot />
 					</div>

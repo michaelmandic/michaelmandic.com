@@ -1,3 +1,7 @@
+---
+import SocialRow from "./social_buttons/SocialRow.astro";
+---
+
 <footer class="max-w-2xl mt-16 pb-12 mx-6 text-faint">
     <hr />
     <div class="flex flex-col gap-6">
@@ -10,11 +14,15 @@
             >
         </div>
 
+        <div>
+            <SocialRow />
+        </div>
+
         <div
-            class="sm:grid sm:grid-cols-2 hidden-underline md:grid-cols-3 gap-4 flex flex-col w-full link-table"
+            class="sm:grid sm:grid-cols-2 hidden-underline md:grid-cols-2 gap-4 flex flex-col w-full link-table"
         >
             <div>
-                <p class="m-0 mb-1 text-blackwhite">Navigation</p>
+                <span class="m-0 mb-1 text-blackwhite">Navigation</span>
                 <ul class="flex flex-col gap-1">
                     <li><a href="/">Home</a></li>
                     <li><a href="/blog">Blog</a></li>
@@ -24,48 +32,9 @@
                     <li><a href="/tip">Tip</a></li>
                 </ul>
             </div>
+
             <div>
-                <p class="m-0 mb-1 text-blackwhite">Socials</p>
-                <ul class="flex flex-col gap-1">
-                    <li>
-                        <a
-                            href="https://www.linkedin.com/in/michael-mandic/"
-                            rel="me"
-                            target="_blank">LinkedIn</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://github.com/michaelmandic"
-                            rel="me"
-                            target="_blank">GitHub</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://mastodon.social/@michaelmandic"
-                            rel="me"
-                            target="_blank">Mastodon</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://bsky.app/profile/michaelmandic.com"
-                            rel="me"
-                            target="_blank">Bluesky</a
-                        >
-                    </li>
-                    <li>
-                         <a
-                             href="mailto:mihajlomandic27@gmail.com"
-                             rel="me"
-                             target="_blank">Email</a
-                         >
-                     </li>
-                </ul>
-            </div>
-            <div>
-                <p class="mb-1 m-0 text-blackwhite">Other Links</p>
+                <span class="mb-1 m-0 text-blackwhite">Other Links</span>
                 <ul class="flex flex-col gap-1">
                     <li><a href="/rss.xml">RSS Feed</a></li>
                     <li>
