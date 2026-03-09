@@ -8,12 +8,14 @@
   --fainter: var(--color-neutral-400);
   --whiteblack: white;
   --blackwhite: black;
+  --main-green: var(--color-green-700);
 
   @variant dark {
     --faint: var(--color-neutral-400);
     --fainter: var(--color-neutral-600);
     --whiteblack: black;
     --blackwhite: white;
+    --main-green: var(--color-green-300);
   }
 }
 
@@ -27,13 +29,13 @@
   --color-whiteblack: var(--whiteblack);
   --color-blackwhite: var(--blackwhite);
 
-  --color-background: var(--color-neutral-200);
+  --color-background: var(--color-neutral-100);
   --color-background-dark: var(--color-neutral-900);
 
   --color-text: var(--color-neutral-800);
   --color-text-dark: var(--color-neutral-200);
 
-  --color-green: oklch(84.943% 0.21991 140.865);
+  --color-main-green: var(--main-green);
 
   --color-accent: var(--color-emerald-700);
   --color-accent-dark: var(--color-emerald-200);
@@ -95,7 +97,7 @@ html {
     @apply font-semibold;
   }
   h1 {
-    @apply text-4xl sm:text-5xl tracking-tight my-6 font-semibold;
+    @apply text-4xl sm:text-5xl tracking-tight my-6 font-semibold text-main-green;
   }
   h2 {
     @apply text-2xl sm:text-3xl my-5 ;
@@ -120,7 +122,7 @@ html {
     @apply text-faint leading-5 text-sm text-pretty;
   }
   a {
-    @apply underline decoration-fainter decoration-wavy decoration-1 underline-offset-4 hover:text-blackwhite hover:decoration-blackwhite active:opacity-50;
+    @apply underline decoration-main-green decoration-wavy decoration-1 underline-offset-4 hover:text-main-green active:text-main-green active:opacity-50;
   }
   .hidden-underline a, a.hidden-underline {
     @apply no-underline hover:underline;
@@ -149,13 +151,13 @@ html {
 
 @layer components {
   .icon-button {
-    @apply text-faint hover:text-blackwhite active:opacity-50 inline hover:rotate-12 hover:scale-110;
+    @apply text-faint hover:text-main-green active:text-main-green active:opacity-50 inline hover:rotate-12 hover:scale-110;
   }
 }
 
 @layer utilities {
   .hover-highlight {
-      @apply  hover:text-blackwhite active:opacity-50 ;
+      @apply  hover:text-main-green active:text-main-green active:opacity-50 ;
   }
   .small {
     @apply text-faint leading-5 text-sm;

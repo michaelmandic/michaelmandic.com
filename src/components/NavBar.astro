@@ -13,7 +13,7 @@ const links = [
 
 function navLink(href: string) {
     return path === href || path.startsWith(href + "/")
-        ? "text-blackwhite underline"
+        ? "text-blackwhite hover:text-main-green active:text-main-green underline"
         : "";
 }
 ---
