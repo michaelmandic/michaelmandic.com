@@ -23,7 +23,7 @@ const url = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:name="root" transition:animate="none">
 	<head>
 		<CommonHead />
 		<title>
@@ -37,7 +37,7 @@ const url = new URL(Astro.url.pathname, Astro.site).toString();
 		<meta property="og:type" content="article" />
 	</head>
 	<body>
-		<div class="max-w-2xl w-full">
+		<div class="max-w-2xl w-full" transition:animate="slide">
 			<NavBar />
 			<main>
 				<article>
@@ -60,7 +60,12 @@ const url = new URL(Astro.url.pathname, Astro.site).toString();
 					</div>
 					<div>
 						<div class="mb-8">
-							<h1 class="my-0">{title}</h1>
+							<h1
+								style={`view-transition-name: blog-post-${titleId}-title`}
+								class="my-0"
+							>
+								{title}
+							</h1>
 							<div class="text-faint my-4">
 								<FormattedDate date={pubDate} />
 							</div>

@@ -15,7 +15,13 @@ const titleId = mainHeading.replace(/\s+/g, "-").toLowerCase();
 ---
 
 <!doctype html>
-<html lang="en" class={htmlClass} {...rest}>
+<html
+	lang="en"
+	class={htmlClass}
+	{...rest}
+	transition:name="root"
+	transition:animate="none"
+>
 	<head>
 		<CommonHead />
 		<title>
@@ -27,7 +33,7 @@ const titleId = mainHeading.replace(/\s+/g, "-").toLowerCase();
 		<meta property="og:url" content="https://michaelmandic.com" />
 	</head>
 	<body class=`${bodyClass}`>
-		<div class="max-w-2xl w-full">
+		<div class="max-w-2xl w-full" transition:animate="slide">
 			<NavBar />
 			<main>
 				<h1>{mainHeading}</h1>

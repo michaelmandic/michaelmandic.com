@@ -13,7 +13,7 @@ const posts = (await getCollection("blog")).sort(
 
 <CommonLayout mainHeading="Blog">
     <section>
-        <ul>
+        <ul class="list-none">
             {
                 posts.map((post) => (
                     <li>
@@ -26,7 +26,12 @@ const posts = (await getCollection("blog")).sort(
                                     alt=""
                                 />
                             )}
-                            <div class="">{post.data.title}</div>
+                            <div
+                                style={`view-transition-name: blog-post-${post.data.title.replace(/\s+/g, "-").toLowerCase()}-title`}
+                                class="tracking-tight font-semibold text-balance"
+                            >
+                                {post.data.title}
+                            </div>
                         </a>
                         <div class="small">
                             <FormattedDate date={post.data.pubDate} />

@@ -3,24 +3,13 @@
 
 [x-cloak] { display: none !important; }
 
-@font-face {
-  font-family: 'InterVariable';
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/fonts/InterVariable-Italic.woff2) format('woff2');
-}
-@font-face {
-  font-family: 'InterVariable';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/fonts/InterVariable.woff2) format('woff2');
+@view-transition {
+  navigation: auto;
 }
 
 :root {
-  --faint: var(--color-neutral-500);
-  --fainter: var(--color-neutral-300);
+  --faint: var(--color-neutral-600);
+  --fainter: var(--color-neutral-400);
   --whiteblack: white;
   --blackwhite: black;
 
@@ -45,7 +34,7 @@
   --color-background: var(--color-neutral-200);
   --color-background-dark: var(--color-neutral-900);
 
-  --color-text: var(--color-neutral-700);
+  --color-text: var(--color-neutral-800);
   --color-text-dark: var(--color-neutral-200);
 
   --color-green: oklch(84.943% 0.21991 140.865);
@@ -149,11 +138,22 @@ html {
     @apply cursor-pointer active:opacity-50;
   }
 
+  main ul {
+    @apply list-disc list-inside my-2 marker:text-fainter;
+  }
+  main ol {
+    @apply list-decimal list-inside my-2 marker:text-fainter;
+  }
+
+  blockquote {
+    @apply border-l-4 border-fainter pl-4 italic my-4;
+  }
+
 }
 
 @layer components {
   .icon-button {
-    @apply text-faint hover:text-blackwhite active:opacity-50 inline;
+    @apply text-faint hover:text-blackwhite active:opacity-50 inline hover:rotate-12 hover:scale-110;
   }
 }
 
