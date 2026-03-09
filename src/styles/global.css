@@ -3,10 +3,6 @@
 
 [x-cloak] { display: none !important; }
 
-@view-transition {
-  navigation: auto;
-}
-
 :root {
   --faint: var(--color-neutral-600);
   --fainter: var(--color-neutral-400);
