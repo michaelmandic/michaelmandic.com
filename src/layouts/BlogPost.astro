@@ -37,7 +37,11 @@ const url = new URL(Astro.url.pathname, Astro.site).toString();
 		<meta property="og:type" content="article" />
 	</head>
 	<body>
-		<div class="max-w-2xl w-full" transition:animate="slide">
+		<div
+			class="max-w-2xl w-full"
+			transition:name="content"
+			transition:animate="fade"
+		>
 			<NavBar />
 			<main>
 				<article>

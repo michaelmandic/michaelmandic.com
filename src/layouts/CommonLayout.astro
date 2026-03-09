@@ -33,7 +33,11 @@ const titleId = mainHeading.replace(/\s+/g, "-").toLowerCase();
 		<meta property="og:url" content="https://michaelmandic.com" />
 	</head>
 	<body class=`${bodyClass}`>
-		<div class="max-w-2xl w-full" transition:animate="slide">
+		<div
+			class="max-w-2xl w-full"
+			transition:name="content"
+			transition:animate="fade"
+		>
 			<NavBar />
 			<main>
 				<h1>{mainHeading}</h1>
