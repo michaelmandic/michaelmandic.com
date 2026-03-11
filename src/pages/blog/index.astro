@@ -16,8 +16,8 @@ const posts = (await getCollection("blog")).sort(
         <ul class="list-none">
             {
                 posts.map((post) => (
-                    <li>
-                        <a href={`/blog/${post.id}/`} class="">
+                    <li class="sm:flex sm:justify-between sm:gap-4">
+                        <a href={`/blog/${post.id}/`} class=" flex-wrap">
                             {post.data.heroImage && (
                                 <Image
                                     width={720}
@@ -26,9 +26,10 @@ const posts = (await getCollection("blog")).sort(
                                     alt=""
                                 />
                             )}
-                            <div>{post.data.title}</div>
+                            <span>{post.data.title}</span>
                         </a>
-                        <div class="small">
+                        <hr class="flex-1 hidden sm:block" />
+                        <div class="hidden-underline text-faint">
                             <FormattedDate date={post.data.pubDate} />
                         </div>
                     </li>

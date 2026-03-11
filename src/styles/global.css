@@ -151,7 +151,7 @@ html {
 
 @layer components {
   .icon-button {
-    @apply text-faint hover:text-main-green active:text-main-green active:opacity-50 inline hover:rotate-12 hover:scale-110;
+    @apply text-faint hover:text-main-green active:text-main-green active:opacity-50 inline hover:rotate-12 hover:scale-110 active:scale-95;
   }
 }
 
